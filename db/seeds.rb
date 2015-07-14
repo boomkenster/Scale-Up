@@ -1,3 +1,5 @@
+include ActionView::Helpers
+
 class Seed
   attr_accessor :categories, :items, :users, :admins, :venues, :events
   def initialize
