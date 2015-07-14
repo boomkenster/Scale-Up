@@ -29,22 +29,22 @@ class Seed
     @images = Image.create([
       { title: "Blazers vs. Nuggets",
         description: "Lillard vs Nuggets",
-        img: File.new("#{Rails.root}/app/assets/images/blazers-nuggets.jpg") },
+        img: image_url('http://loremflickr.com/g/320/240/newyork') },
       { title: "Hannibal Burress",
         description: "Hannibal Burress Headshot",
-        img: File.new("#{Rails.root}/app/assets/images/hannibal-buress.jpg") },
+        img: image_url('http://loremflickr.com/g/320/240/newyork') },
       { title: "Pitbull and Enrique Iglesias",
         description: "Pitbull and Enrique Being Bosses",
-        img: File.new("#{Rails.root}/app/assets/images/pitbull-enrique.jpg") },
+        img: image_url('http://loremflickr.com/g/320/240/newyork') },
       { title: "ABBA!!!",
         description: "The whole gang",
-        img: File.new("#{Rails.root}/app/assets/images/abba.jpg") },
+        img: image_url('http://loremflickr.com/g/320/240/dog') },
       { title: "Portland Timbers",
         description: "The Portland Timbers",
-        img: File.new("#{Rails.root}/app/assets/images/timbers.jpg") },
+        img: image_url('http://loremflickr.com/g/320/240/dog') },
       { title: "Missing",
         description: "crowd",
-        img: File.new("#{Rails.root}/app/assets/images/crowd.jpg") }
+        img: image_url('http://loremflickr.com/g/320/240/dog') }
     ])
   end
 
