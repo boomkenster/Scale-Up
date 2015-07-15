@@ -1,5 +1,3 @@
-include ActionView::Helpers
-
 class Seed
   attr_accessor :categories, :items, :users, :admins, :venues, :events
   def initialize
@@ -24,6 +22,18 @@ class Seed
       { name: "Sports" },
       { name: "Music" },
       { name: "Theater" },
+      { name: "Education" },
+      { name: "Hardware" },
+      { name: "Shopping" },
+      { name: "Outdoors" },
+      { name: "Dance" },
+      { name: "Opera" },
+      { name: "Concert" },
+      { name: "Active" },
+      { name: "Technology" },
+      { name: "Health" },
+      { name: "History" },
+      { name: "Adventure" }
     ])
   end
 
@@ -31,22 +41,22 @@ class Seed
     @images = Image.create([
       { title: "Blazers vs. Nuggets",
         description: "Lillard vs Nuggets",
-        img: image_url('http://loremflickr.com/g/320/240/newyork') },
+        img: File.new("#{Rails.root}/app/assets/images/blazers-nuggets.jpg") },
       { title: "Hannibal Burress",
         description: "Hannibal Burress Headshot",
-        img: image_url('http://loremflickr.com/g/320/240/newyork') },
+        img: File.new("#{Rails.root}/app/assets/images/hannibal-buress.jpg") },
       { title: "Pitbull and Enrique Iglesias",
         description: "Pitbull and Enrique Being Bosses",
-        img: image_url('http://loremflickr.com/g/320/240/newyork') },
+        img: File.new("#{Rails.root}/app/assets/images/pitbull-enrique.jpg") },
       { title: "ABBA!!!",
         description: "The whole gang",
-        img: image_url('http://loremflickr.com/g/320/240/dog') },
+        img: File.new("#{Rails.root}/app/assets/images/abba.jpg") },
       { title: "Portland Timbers",
         description: "The Portland Timbers",
-        img: image_url('http://loremflickr.com/g/320/240/dog') },
+        img: File.new("#{Rails.root}/app/assets/images/timbers.jpg") },
       { title: "Missing",
         description: "crowd",
-        img: image_url('http://loremflickr.com/g/320/240/dog') }
+        img: File.new("#{Rails.root}/app/assets/images/crowd.jpg") }
     ])
   end
 
@@ -64,6 +74,24 @@ class Seed
        location: "Chicago, IL"  },
      { name: "Emirates Stadium",
        location: "London, England" },
+     { name: "Soldier Field1",
+       location: "Chicago, IL1"  },
+     { name: "Soldier Field2",
+       location: "Chicago, IL2"  },
+     { name: "Soldier Field3",
+       location: "Chicago, IL3"  },
+     { name: "Soldier Field4",
+       location: "Chicago, IL4"  },
+     { name: "Soldier Field4",
+       location: "Chicago, IL4"  },
+     { name: "Soldier Field5",
+       location: "Chicago, IL5"  },
+     { name: "Soldier Field6",
+       location: "Chicago, IL6"  },
+     { name: "Soldier Field7",
+       location: "Chicago, IL7"  },
+     { name: "Soldier Field8",
+       location: "Chicago, IL8"  },
     ])
   end
 
@@ -312,7 +340,7 @@ class Seed
         street_2:              Faker::Address.secondary_address,
         city:                  Faker::Address.city,
         state:                 Faker::Address.state,
-        zipcode:               Faker::Address.zip_code,
+        zipcode:               10000,
         display_name:          Faker::Internet.user_name
         )
       puts "User #{i}: #{user.display_name} created!"
