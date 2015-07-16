@@ -5,10 +5,14 @@ class Admin::EventsController < ApplicationController
 
   def index
     @events = Event.order(updated_at: :desc).paginate(:page => params[:page], :per_page => 10)
+    @categories = Category.all
+    @venues = Venue.all
   end
 
   def new
     @event = Event.new
+    @categories = Category.all
+    @venues = Venue.all
   end
 
   def create
@@ -25,6 +29,8 @@ class Admin::EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+    @categories = Category.all
+    @venues = Venue.all
   end
 
   def update
@@ -33,6 +39,8 @@ class Admin::EventsController < ApplicationController
     update_image(params[:event][:images])
     @event.category = Category.find(params[:event][:category])
     @event.venue = Venue.find(params[:event][:venue])
+    @categories = Category.all
+    @venues = Venue.all
     if @event.save
       redirect_to admin_events_path
     else
