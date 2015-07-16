@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   root to: "static_pages#index"
   resources :users, only: [:new, :create, :edit, :update]
 
+  get 'errors/file_not_found'
+  get 'errors/unprocessable'
+  get 'errors/internal_server_error'
+  match '/404', to: 'errors#file_not_found', via: :all
+
   get "/login"  => "sessions#new"
   post "/login"  => "sessions#create"
   delete "/logout" => "sessions#destroy"
